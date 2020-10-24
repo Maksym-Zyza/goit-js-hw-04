@@ -428,3 +428,167 @@ mood : happy
 
 // console.log(arrayRemove);
 // // ['Knife', 'Medkit']
+
+//
+
+// const Hero = function (name, xp) {
+//   this.name = name;
+//   this.xp = xp;
+// };
+
+// Hero.description = "This is a Hero base class";
+
+// Hero.showStats = function (hero) {
+//   console.Log("Loggin stats from Hero.showStats: ", hero);
+// };
+
+// console.dir(Hero);
+
+// Hero.prototype.changeName = function (name) {
+//   this.nsme = name;
+// };
+
+// const mango = new Hero("Mango", 1000);
+// console.log(mango);
+
+// Функция констркуктор через Классы
+
+// class Hero {
+//   static description = "This is a Hero base class";
+
+//   static showStats(hero) {
+//     console.Log("Loggin stats from Hero.showStats: ", hero);
+//   }
+
+//   constructor(name, xp) {
+//     this._name = name;
+//     this.xp = xp;
+//   }
+
+//   get name() {
+//     return this._name;
+//   }
+
+//   set name(newName) {
+//     this._name = newName;
+//   }
+
+//   // changeName(name) {
+//   //   this.nsme = name;
+//   // }
+
+//   // getName() {
+//   //   return this.name;
+//   // }
+
+//   gainXp(amount) {
+//     console.log(`${this.name} получил ${amount} опыта`);
+//     this.xp += amount;
+//   }
+// }
+
+// console.dir(Hero);
+
+// const mango = new Hero("Mango", 1000);
+// const poly = new Hero("Poly", 2000);
+
+// mango.gainXp(2000);
+// console.log(mango);
+
+// poly.gainXp(2000);
+// console.log(poly);
+
+// mango.name = "Maangooo";
+// console.log(mango.name);
+
+// Наследование классов
+
+class Hero {
+  constructor(name, xp) {
+    this._name = name;
+    this.xp = xp;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(newName) {
+    this._name = newName;
+  }
+
+  gainXp(amount) {
+    console.log(`${this.name} получил ${amount} очков опита`);
+    this.xp += amount;
+  }
+}
+
+console.dir(Hero);
+
+const mango = new Hero("Mango", 1000);
+const poly = new Hero("Poly", 2000);
+
+mango.gainXp(2000);
+console.log(mango);
+
+poly.gainXp(2000);
+console.log(poly);
+
+console.log("\n");
+
+// class Warrior extends Hero {
+//   constructor(name, xp, weapon) {
+//     super(name, xp);
+//     this.weapon = weapon;
+//   }
+//   attack() {
+//     console.log(`${this.name} использует ${this.weapon}`);
+//   }
+// }
+
+// const garri = new Warrior("Gerri", 2000, "'Меч Правосудия'");
+// garri.attack();
+// garri.gainXp(3000);
+// console.log(garri);
+
+// console.log("\n");
+
+// class Mag extends Warrior {
+//   constructor(name, xp, weapon, magic) {
+//     super(name, xp, weapon);
+//     this.magic = magic;
+//   }
+
+//   magicAttack() {
+//     console.log(`${this.name} производит заклинание ${this.magic}`);
+//   }
+// }
+
+// const ajax = new Mag("Ajax", 5000, "'Трость Верховного Мага'", "'Тухлое яйцо'");
+// ajax.attack();
+// ajax.gainXp(3000);
+// ajax.magicAttack();
+// console.log(ajax);
+
+// class Casia extends Hero {
+//   constructor(name, xp, weapon, magic) {
+//     super(name, xp, weapon);
+//     this.magic = magic;
+//   }
+
+//   codName() {
+//     console.log(`${this.name} - Кодове ім'я 'Пухнатий Кругляшок' `);
+//   }
+//   weaponAttack() {
+//     console.log(`${this.name} застосовує секретну зброю ${this.weapon}`);
+//   }
+//   magicAttack() {
+//     console.log(`${this.name} застосовує секретну магію ${this.magic}`);
+//   }
+// }
+
+// const casia = new Casia("Casia", 5, "'Лапкою Тронь-Тронь'", "'Туління'");
+// casia.codName();
+// casia.weaponAttack();
+// casia.magicAttack();
+// casia.gainXp(5);

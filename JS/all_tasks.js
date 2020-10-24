@@ -307,56 +307,56 @@
 // isLoginValid только проверяет валидный ли логин и возвращает true или false.
 // addLogin добавляет или не добавляет логин в массив.При этом для проверок условия добавления использует результаты вызовов других функций - isLoginUnique и isLoginValid.
 
-function isLoginValid(login, min = 4, max = 16) {
-  for (let i = 0; i < login.length; i += 1) {
-    return min <= login.length && login.length <= max ? true : false;
-  }
-}
-// console.log(isLoginValid(["Mango", "robotGoogles", "Ploy"]));
-// console.log(isLoginUnique(["Mango", "robotGoogles", "Ploy"], "Mango"));
-
-function isLoginUnique(allLogins, login) {
-  "use strict";
-  //   console.log(login);
-  return allLogins.includes(login) ? false : true;
-}
-
-function addLogin(allLogins, login) {
-  "use strict";
-  const SUCCESS = "Логин успешно добавлен!";
-  const REFUSAL = "Такой логин уже используется!";
-  const ERROR = "Ошибка! Логин должен быть размером от 4 до 16 символов";
-  let message;
-  // Write code under this line
-  console.log(login);
-  console.log(allLogins);
-  if (isLoginValid(login) === false) {
-    message = ERROR;
-  } else if (isLoginUnique(allLogins, login) !== true) {
-    message = REFUSAL;
-  } else if (
-    isLoginValid(login) === true &&
-    isLoginUnique(allLogins, login) !== false
-  ) {
-    message = SUCCESS;
-    logins.push(login);
-  }
-  return message;
-}
+// function isLoginValid(login, min = 4, max = 16) {
+//   for (let i = 0; i < login.length; i += 1) {
+//     return min <= login.length && login.length <= max ? true : false;
+//   }
 // }
-const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
+// // console.log(isLoginValid(["Mango", "robotGoogles", "Ploy"]));
+// // console.log(isLoginUnique(["Mango", "robotGoogles", "Ploy"], "Mango"));
 
-console.log(addLogin(logins, "Ajax"));
-//("Логин успешно добавлен!");
+// function isLoginUnique(allLogins, login) {
+//   "use strict";
+//   //   console.log(login);
+//   return allLogins.includes(login) ? false : true;
+// }
 
-console.log(addLogin(logins, "robotGoogles"));
-//("Такой логин уже используется!");
+// function addLogin(allLogins, login) {
+//   "use strict";
+//   const SUCCESS = "Логин успешно добавлен!";
+//   const REFUSAL = "Такой логин уже используется!";
+//   const ERROR = "Ошибка! Логин должен быть размером от 4 до 16 символов";
+//   let message;
+//   // Write code under this line
+//   console.log(login);
+//   console.log(allLogins);
+//   if (isLoginValid(login) === false) {
+//     message = ERROR;
+//   } else if (isLoginUnique(allLogins, login) !== true) {
+//     message = REFUSAL;
+//   } else if (
+//     isLoginValid(login) === true &&
+//     isLoginUnique(allLogins, login) !== false
+//   ) {
+//     message = SUCCESS;
+//     logins.push(login);
+//   }
+//   return message;
+// }
+// // }
+// const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 
-console.log(addLogin(logins, "Zod"));
-// 'Ошибка! Логин должен быть от 4 до 16 символов'
+// console.log(addLogin(logins, "Ajax"));
+// //("Логин успешно добавлен!");
 
-console.log(addLogin(logins, "jqueryisextremelyfast"));
-// 'Ошибка! Логин должен быть от 4 до 16 символов'
+// console.log(addLogin(logins, "robotGoogles"));
+// //("Такой логин уже используется!");
+
+// console.log(addLogin(logins, "Zod"));
+// // 'Ошибка! Логин должен быть от 4 до 16 символов'
+
+// console.log(addLogin(logins, "jqueryisextremelyfast"));
+// // 'Ошибка! Логин должен быть от 4 до 16 символов'
 
 // Задача 2-10 (Задание 6)
 // Напиши скрипт со следующим функционалом:
@@ -1139,3 +1139,436 @@ mood : happy
 
 // console.log(arrayRemove);
 // // ['Knife', 'Medkit']
+
+/*
+ * Прототип объекта
+ *
+ * - https://miro.com/app/board/o9J_ku0WE0g=/
+ * - Object.create()
+ * - [[Prototype]] и __proto__
+ * - Object.getPrototypeOf()
+ * - Собственные свойства и Object.prototype.hasOwnProperty()
+ * - Цепочка прототипов
+ */
+
+// const objA = {
+//   a: 1,
+//   b: 5,
+// };
+
+// const objB = {
+//   c: 10,
+// };
+
+// const objA = Object.create(objB);
+// console.log(objA.c);
+
+// objA.a = 3;
+// objA.b = 5;
+// console.log(objA);
+
+// Прототипное наследование:
+// 1. Создаем ф - ю конструктор которая в будущие объекты будет добавить свойства с одинаковыми именами, но разными значениями на каждом вызове.
+// 2.  В свойство.prototype функции конструктора добавляем методы, которые будут доступны по ссылке.
+// 3. Вызываем ф - ю конструктор через new передавая аргументы.
+// 4. new создаёт новый объект в который добавляются свойства со значениями и ссылка на объект.prototype.
+
+// const Manager = function (name, salse, say) {
+//   this.name = name;
+//   this.salse = salse;
+//   this.say = say;
+// };
+
+// const mango = new Manager("Mango", 5, "Hello!");
+// console.log(mango);
+
+// const poly = new Manager("Poly", 7, "Hi!");
+
+// console.log(poly);
+
+// Manager.prototype.sell = function () {
+//   this.salse += 1;
+// };
+
+// Manager.prototype.chengeName = function (name) {
+//   this.name = name;
+// };
+
+// mango.sell();
+// console.log(mango);
+// mango.sell();
+// console.log(mango);
+// mango.sell();
+// console.log(mango);
+// poly.chengeName("Polllly");
+// console.log(poly);
+
+// console.log(mango.__proto__ === Manager.prototype); // true
+
+// const a = {};
+// console.log(a.__proto__ === Object.prototype); // true
+
+// const b = [];
+// console.log(b.__proto__ === Array.prototype); // true
+
+// Задача 5 - 1
+// function-constructor
+// Напиши функцию - конструктор Account, которая создает объект со свойствами login и email.
+// В prototype функции - конструктора добавь метод getInfo(), который возвращает строку со значениями свойств login и email объекта.
+
+// const Account = function (login, email) {
+//   this.login = login;
+//   this.email = email;
+// };
+// Account.prototype.getInfo = function () {
+//   return `login : ${this.login}, email: ${this.email}`;
+// };
+// console.log(typeof Account.prototype.getInfo); // 'function'
+
+// const mango = new Account("Mangozedog", "mango@dog.woof");
+// console.log(mango.getInfo());
+// // 'login : Mangozedog, email: mango@dog.woof'
+
+// const poly = new Account("Poly", "poly@mail.com");
+// console.log(poly.getInfo());
+// // 'login : Poly, email: poly@mail.com'
+
+// Задача 5 - 2
+// class
+// Напиши класс User для создания пользователя со следующим свойствами:
+// name - строка
+// age - число
+// followers - число
+// Добавь метод getInfo(), который, выводит строку: User ${ имя } is ${ возраст } years old and has ${ кол - во фоловеров } followers
+
+// class User {
+//   constructor(name, age, followers) {
+//     this.name = name;
+//     this.age = age;
+//     this.followers = followers;
+//   }
+//   getInfo() {
+//     return `User ${this.name} is ${this.age} years old and has ${this.followers} followers`;
+//   }
+// }
+
+// console.log(typeof User);
+// // ("function");
+
+// const mango = new User("Mango", 2, 20);
+// console.log(mango.getInfo());
+// // 'User Mango is 2 years old and has 20 followers'
+
+// console.log(typeof mango.getInfo);
+// // 'function'
+
+// const poly = new User("Poly", 3, 17);
+// console.log(poly.getInfo());
+// // 'User Poly is 3 years old and has 17 followers'
+
+// Задача 5 - 3
+// использование методов класса
+// Напиши класс Storage, который будет создавать объекты для управления складом товаров.При вызове будет получать один аргумент - начальный массив товаров, и записывать его в свойство items.
+// Добавь методы класса:
+// getItems() - возвращает массив текущих товаров
+// addItem(item) - получает новый товар и добавляет его к текущим
+// removeItem(item) - получает товар и, если он есть, удаляет его из текущих
+
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+//   }
+//   getItems() {
+//     return this.items;
+//   }
+//   addItem(item) {
+//     this.items.push(item);
+//   }
+//   removeItem(item) {
+//     let index = this.items.indexOf(item);
+//     if (index > -1) {
+//       this.items.splice(index, 1);
+//     }
+//   }
+// }
+
+// console.log(typeof Storage);
+// // 'function'
+
+// const goods = ["Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор"];
+
+// const storage = new Storage(goods);
+// console.log(storage.getItems());
+// console.log(storage);
+// /* [
+//   'Нанитоиды',
+//   'Пролонгер',
+//   'Железные жупи',
+//   'Антигравитатор'
+// ] */
+
+// storage.addItem("Дроид");
+// console.log(storage.getItems());
+// /* [
+//   'Нанитоиды',
+//   'Пролонгер',
+//   'Железные жупи',
+//   'Антигравитатор',
+//   'Дроид'
+// ] */
+
+// storage.removeItem("Пролонгер");
+// console.log(storage.getItems());
+// /* [
+//   'Нанитоиды',
+//   'Железные жупи',
+//   'Антигравитатор',
+//   'Дроид'
+// ] */
+// // console.log(new Storage.items());
+
+// Задача 5 - 4
+// переиспользование методов класса
+// Напиши класс StringBuilder.На вход он получает один параметр - строку, которую записывает в свойство _value.
+// Добавь классу следующий функционал:
+// Геттер value - возвращает текущее значение поля _value
+// Метод append(str) - получает параметр str(строку) и добавляет ее в конец _value
+// Метод prepend(str) - получает параметр str(строку) и добавляет ее в начало value
+// Метод pad(str) - получает параметр str(строку) и добавляет ее в начало и в конец _value
+// Метод pad должен использовать методы append и prepend
+
+// class StringBuilder {
+//   constructor(value) {
+//     this._value = value;
+//   }
+
+//   get value() {
+//     return this._value;
+//   }
+
+//   append(str) {
+//     this._value += str;
+//   }
+
+//   prepend(str) {
+//     this._value = str + this._value;
+//   }
+
+//   pad(str, append, prepend) {
+//     append = this.append(str);
+//     prepend = this.prepend(str);
+//   }
+// }
+
+// console.log(typeof StringBuilder);
+// // 'function'
+
+// const builder = new StringBuilder(".");
+
+// builder.append("^");
+// console.log(builder.value); // '.^'
+
+// builder.prepend("^");
+// console.log(builder.value); // '^.^'
+
+// builder.pad("=");
+// console.log(builder.value); // '=^.^='
+
+// Задача 5 - 5
+// класс
+// Напиши класс Car с указанными свойствами и методами.
+
+// class Car {
+//     /*
+//      * Добавь `статический` метод
+//      * `getSpecs(car)`, который принимает
+//      * объект-машину как параметр
+//      * и возвращает шаблонную строку
+//      * со свойствами и значениями объекта.
+//      * Свойства:
+//      *   maxSpeed,
+//      *   speed,
+//      *   isOn,
+//      *   distance,
+//      *   price
+//      * Пример строки, полученной этим методом:
+//      * 'maxSpeed: 200, speed: 50, isOn: true, distance: 100, price: 2000'
+//      */
+
+//     /*
+//      * Конструктор получает объект настроек.
+//      *
+//      * Добавь свойства будущеего экземпляра класса:
+//      *  speed - текущая скорость,
+//      *          начальное значение `0`
+//      *  price - цена автомобиля
+//      *  maxSpeed - максимальная скорость
+//      *  isOn - заведен ли автомобиль.
+//      *         Значения `true` или `false`,
+//      *         начальное значение false
+//      *  distance - пробег в километрах,
+//      *             начальное значение `0`
+//      */
+//     constructor() { }
+
+//     /*
+//      * Добавь геттер и сеттер
+//      * для свойства `price`, который будет
+//      * работать с свойством цены автомобиля.
+//      *
+//      * ВАЖНО: для записи методов get и set
+//      * значение параметра записывают с
+//      * подчеркиванием. См. ниже пример 1.
+//      */
+
+//     /*
+//      * Метод, который заводит автомобиль
+//      * Записывает в свойство `isOn` значение `true`
+//      */
+//     turnOn() { }
+
+//     /*
+//      * Метод, чтобы заглушить автомобиль
+//      * Этот метод должен записывать
+//      * в свойство isOn значение false,
+//      * и сбрасывать текущую скорость до 0
+//      */
+//     turnOff() { }
+
+//     /*
+//      * Этот метод должен добавлять
+//      * к свойству `speed` полученное
+//      * значение, при условии,
+//      * что результирующая скорость
+//      * не больше чем значение свойства `maxSpeed`
+//      */
+//     accelerate(value) { }
+
+//     /*
+//      * Этот метод должен отнимать
+//      * от свойства `speed`
+//      * полученное значение, при условии,
+//      * что результирующая скорость не меньше 0
+//      */
+
+//     decelerate(value) { }
+
+//     /*
+//      * Этот метод должен добавлять к свойству
+//      * `distance` пробег в километрах,
+//      * т.е. hours * speed,
+//      * но только в том случае,
+//      * если машина заведена!
+//      */
+//     drive(hours) { }
+// }
+
+// #### Пример 1.
+
+//     ```js
+// class Guest {
+//   // Собственные свойства класса размещаем в конструкторе
+//   constructor(name, roomNumber) {
+//     /* параметр name не должен
+//      *   совпадать с названием свойства
+//      *   но должен быть похож.
+//      *   Поэтому используют прием смены
+//      *   названия добавляя символ '_'.
+//      *   Хотя это может любой другой символ
+//      */
+//     this._name = name;
+//   }
+
+//   // Используем геттеры и сеттеры для описания интерфейса доступа к свойствам
+//   get name() {
+//     return this._name;
+//   }
+
+//   set name(value) {
+//     this._name = value;
+//   }
+// }
+
+// class Car {
+//   static getSpecs(car) {
+//     return `maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car.price}`;
+//   }
+
+//   constructor(objValue) {
+//     this.distance = 0;
+//     this.speed = 0;
+//     this.maxSpeed = objValue.maxSpeed;
+//     this._price = objValue.price;
+//     this.isOn = false;
+//   }
+
+//   get price() {
+//     return this._price;
+//   }
+
+//   set price(value) {
+//     this._price = value;
+//   }
+
+//   turnOn() {
+//     this.isOn = true;
+//   }
+
+//   turnOff() {
+//     this.isOn = false;
+//     if ((this.isOn = false)) {
+//       this.speed = 0;
+//     }
+//   }
+
+//   accelerate(value) {
+//     let newSped = this.speed + value;
+//     if (newSped > this.maxSpeed) {
+//       this.speed = this.maxSpeed;
+//     } else {
+//       this.speed = newSped;
+//     }
+//   }
+
+//   decelerate(value) {
+//     let newSped = (this.speed -= value);
+//     if (this.speed > 0) {
+//       this.speed = newSped;
+//     } else {
+//       this.speed = 0;
+//     }
+//   }
+
+//   drive(hours) {
+//     this.distance += hours * this.speed;
+//   }
+//   // Write code under this line
+//   //   getSpecs() {}
+//   //   constructor() {}
+//   //   get price() {}
+//   //   set price(value) {}
+//   //   turnOn() {}
+//   //   turnOff() {}
+//   //   accelerate(value) {}
+//   //   decelerate(value) {}
+//   //   drive(hours) {}
+// }
+
+// const mustang = new Car({ maxSpeed: 200, price: 2000 });
+// mustang.turnOn();
+// mustang.accelerate(50);
+// mustang.drive(2);
+
+// console.log(Car.getSpecs(mustang));
+// // 'maxSpeed: 200, speed: 50, isOn: true, distance: 100, price: 2000'
+
+// mustang.decelerate(20);
+// mustang.drive(1);
+// mustang.turnOff();
+
+// console.log(Car.getSpecs(mustang));
+// // 'maxSpeed: 200, speed: 0, isOn: false, distance: 130, price: 2000'
+
+// console.log(mustang.price); // 2000
+// mustang.price = 4000;
+// console.log(mustang.price); // 4000
