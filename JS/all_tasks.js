@@ -1,3 +1,115 @@
+// console.log("Task 1-1 \n");
+// // =====================================================
+// const name = "Генератор защитного поля";
+// let prise = 1000;
+// prise = 2000;
+// console.log(`Выбран ${name}, цена за штуку ${prise} кредитов`);
+
+// console.log("Task 1-2 \n");
+// // =====================================================
+
+// const total = 100;
+// const ordered = 150;
+
+// if (total > ordered) {
+//   console.log("На складе недостаточно твоаров!");
+// } else {
+//   console.log("Заказ оформлен, с вами свяжется менеджер.");
+// }
+
+// console.log("Task 1-3 \n");
+// // =====================================================
+
+// const ADMIN_PASSWORD = prompt("Добро пожаловать, введите пароль");
+// let message;
+
+// if (ADMIN_PASSWORD === null) {
+//   message = "Отменено пользователем!";
+// } else if (ADMIN_PASSWORD === "jqueryismyjam") {
+//   message = "Добро пожаловать!";
+// } else {
+//   message = "Доступ запрещен, неверный пароль!";
+// }
+// alert(message);
+
+// console.log("Task 1-4 \n");
+// =====================================================
+// const credits = 23580;
+// const pricePerDroid = 3000;
+// const quantityDroid = prompt("Добрий день сколькои дроидов Ви хотите купить?");
+// let totalPrice = credits - pricePerDroid * quantityDroid;
+// let message;
+// if (quantityDroid > 0) {
+//   message = `Вы купили ${quantityDroid} дроидов, на счету осталось ${totalPrice} кредитов.`;
+// } else if (quantityDroid > credits) {
+//   message = "Недостаточно средств на счету!";
+// } else {
+//   message = "Некорректное введение. Отменено пользователем!";
+// }
+// alert(message);
+
+// console.log("Task 1-5 \n");
+// =====================================================
+
+// let country = prompt("Укажите страну доставки товара");
+// country = country.toLowerCase();
+// let price;
+
+// switch (country) {
+//   case "китай":
+//     price = 100;
+//     break;
+//   case "чили":
+//     price = 250;
+//     break;
+//   case "австралия":
+//     price = 170;
+//     break;
+//   case "индия":
+//     price = 80;
+//     break;
+//   case "ямайка":
+//     price = 120;
+//     break;
+//   default:
+//     alert(`В вашей стране доставка не доступна`);
+// }
+
+// if (typeof price === "undefined") {
+//   console.log(`В вашей стране доставка не доступна`);
+// } else {
+//   country = country[0].toUpperCase() + country.slice(1);
+//   console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
+// }
+
+// console.log("Task 1-6 \n");
+// =====================================================
+
+// Напиши скрипт который просит посетителя ввести число в prompt до тех пор, пока посетитель на нажмет Cancel и каждый раз добавляет введенное значение к общей сумме.
+// При загрузке страницы пользователю предлагается в prompt ввести число.Ввод добавляется к значению переменной total.
+// Операция ввода числа продолжается до тех пор, пока пользователь не нажмет кнопку Cancel в prompt.
+// После того как пользователь прекратил ввод нажав кнопку Cancel, показать alert со строкой 'Общая сумма чисел равна [сумма]'.
+// bell Делать проверку того, что пользователь ввел именно число, а не произвольный набор символов, не нужно.Если хочешь, в случае некорректного ввода, показывай alert с текстом 'Было введено не число, попробуйте еще раз', при этом результат prompt плюсовать к общей сумме не нужно, после чего снова пользователю предлагается ввести число в prompt.
+
+// let input;
+// let total = 0;
+
+// for (let input = 0; input !== null; input += 0) {
+//     input = prompt("Введите чило");
+//     if (input === null) {
+//         console.log(`Выход`);
+//         break;
+//     } else if (isNaN(input)) {
+//         alert("Было введено не число, попробуйте еще раз");
+//     } else {
+//         console.log(`Начальное значение: ${total}`);
+//         total += Number(input);
+//         console.log(`Введенное число: ${input}`);
+//         console.log(`Сумма: ${total}`);
+//     }
+// }
+// alert(`Общая сумма чисел равна ${total}`);
+
 // Задача 2-1
 // Напиши функцию logItems(array), которая получает массив и использует цикл for, который для каждого элемента массива будет выводить в консоль сообщение в формате[номер элемента]-[значение элемента].
 // Нумерация должна начинаться с 1. К примеру для первого элемента массива['Mango', 'Poly', 'Ajax'] с индексом 0 будет выведено '1 - Mango', а для индекса 2 выведет '3 - Ajax'.
@@ -709,247 +821,9 @@ mood : happy
 // console.log(calculateTotalPrice(products, "Дроид"));
 // // 2800
 
-// const hello = "Hello word!!!";
-// console.log(hello);
+// =====================================================
+console.log("Задача 4 - 1 // Callback функция \n");
 
-// Задача 3 - 1
-// CRUD для свойств объекта
-// С - create(создать)
-// R - read(читать)
-// U - update(обновить)
-// D - delete (удалить)
-// Напиши скрипт, который, для объекта user, последовательно:
-
-// добавляет поле 'mood' со значением 'happy'
-// добавляет поле 'full time' со значением true
-// заменяет значение 'hobby' на 'skydiving'
-// заменяет значение 'premium' на false
-// в переменную message записывает содержимое объекта user:
-// для переменной keys присваивает массив свойств объекта, используя метод Object.keys()
-// с помощью оператора for...of
-// в формате ключ: значение
-// c переносом строки('\n')
-
-// let message = "";
-// const user = {
-//   age: 20,
-//   hobby: "html",
-//   name: "Mango",
-//   premium: true,
-// };
-
-// //Write code under this line
-// user.mood = "happy";
-// user["full time"] = true;
-// user.hobby = "skydiving";
-// user.premium = false;
-
-// const keys = Object.keys(user);
-// // Write code under this line
-// const entries = Object.entries(user);
-// for (const entry of entries) {
-//   const key = entry[0];
-//   const value = entry[1];
-
-//   message += `${key}: ${value}\n`;
-// }
-
-// console.log(message);
-/*
-'age : 20
-hobby : skydiving
-name : Mango
-premium : false
-mood : happy
-"full time" : true
-' */
-
-// Задача 3 - 2
-// Подсчет количества свойств в объекте
-// Напиши функцию countProps(obj), которая возвращает число - количество свойств в объекте.
-
-// Циклы не должны использоваться
-
-// const countProps = function (obj) {
-//   "use strict";
-//   return Object.keys(obj).length;
-// };
-
-// console.log(countProps({})); // 0
-
-// console.log(countProps({ a: 1, b: 1 })); // 2
-
-// console.log(countProps({ a: 1, b: 1, c: 1, d: 1, e: 1 })); // 5
-
-// Задача 3 - 3
-// Поиск наибольшего значения среди свойств объекта
-// Напиши функцию findBestEmployee(employees), которая принимает объект сотрудников и возвращает имя самого продуктивного(который выполнил больше всех задач).Сотрудники и кол - во выполненных задач содержатся как свойства объекта в формате "имя": "кол-во задач".
-
-// const findBestEmployee = function (employees) {
-//   "use strict";
-//   let bestEmployee = "";
-//   const maxNumber = Math.max(...Object.values(employees));
-//   console.log(maxNumber);
-//   const entries = Object.entries(employees);
-//   for (const entry of entries) {
-//     const key = entry[0];
-//     const value = entry[1];
-//     // console.log(`${key}: ${value}`);
-//     if (value === maxNumber) {
-//       bestEmployee = key;
-//     }
-//   }
-//   return bestEmployee;
-// };
-
-// // Объекты и ожидаемый результат
-// const developers = {
-//   ann: 29,
-//   david: 35,
-//   helen: 1,
-//   lorence: 99,
-// };
-// console.log(findBestEmployee(developers));
-// // 'lorence'
-
-// const supports = {
-//   poly: 12,
-//   mango: 17,
-//   ajax: 4,
-// };
-// console.log(findBestEmployee(supports));
-// // 'mango'
-
-// const sellers = {
-//   lux: 147,
-//   david: 21,
-//   kiwi: 19,
-//   chelsy: 38,
-// };
-// console.log(findBestEmployee(sellers));
-// // 'lux'
-
-// Задача 3 - 4
-// Суммирование значений свойств объекта
-// Напиши функцию countTotalSalary(employees) принимающую объект зарплат.Функция считает общую сумму зарплаты работников и возвращает ее.Каждое поле объекта, передаваемого в функцию, имеет вид "имя": "зарплата".
-
-// const countTotalSalary = function (employees) {
-//   "use strict";
-//   let total = 0;
-//   const values = Object.values(employees);
-//   for (const value of values) {
-//     total += value;
-//   }
-//   return total;
-// };
-
-// // Объекты и ожидаемый результат
-// const developers = {
-//   mango: 300,
-//   poly: 250,
-//   alfred: 450,
-// };
-// console.log(countTotalSalary(developers));
-// // 1000
-
-// const supports = {
-//   kiwi: 200,
-//   lux: 150,
-//   chelsy: 150,
-// };
-// console.log(countTotalSalary(supports));
-// // 500
-
-// Задача 3 - 5
-// Оператор in и метод push
-// Напиши функцию getAllPropValues(arr, prop), которая получает массив объектов и имя свойства.
-
-// Функция возвращает массив значений определенного свойства prop из каждого объекта в массиве.
-
-// Используй метод push для добавления значения в массив и оператор in для проверки наличия свойства в объекте.
-
-// function getAllPropValues(array, prop) {
-//   "use strict";
-//   let newArray = [];
-//   //   console.log(array);
-
-//   for (const obj of array) {
-//     // console.log(obj);
-//     if (prop in obj) {
-//       newArray.push(obj[prop]);
-//     }
-//   }
-//   return newArray;
-// }
-
-// // Объекты и ожидаемый результат
-// const products = [
-//   { name: "Радар", price: 1300, quantity: 4 },
-//   { name: "Радар", price: 1280, quantity: 2 },
-//   { name: "Радар", price: 1320, quantity: 1 },
-//   { name: "Сканер", price: 2700, quantity: 1 },
-//   { name: "Сканер", price: 2500, quantity: 3 },
-//   { name: "Дроид", price: 400, quantity: 7 },
-//   { name: "Захват", price: 1200, quantity: 2 },
-// ];
-
-// console.log(getAllPropValues(products, "name"));
-// // ['Радар', 'Радар', 'Радар', 'Сканер', 'Сканер', 'Дроид', 'Захват']
-
-// console.log(getAllPropValues(products, "quantity"));
-// // [4, 2, 1, 1, 3, 7, 2]
-
-// console.log(getAllPropValues(products, "category"));
-// //  []
-
-// Задача 3 - 6
-// Суммирование значений свойства из массива объектов
-// Напиши функцию calculateTotalPrice(allProdcuts, productName), которая получает массив объектов и имя продукта(значение свойства name).Возвращает общую стоимость продукта(цена умноженная на количество).
-// Вызовы функции для проверки работоспособности твоей реализации.
-// calculateTotalPrice(products, 'Радар')); // 9080
-// calculateTotalPrice(products, 'Сканер')); // 10200
-// calculateTotalPrice(products, 'Захват')); // 2400
-// calculateTotalPrice(products, 'Дроид')); // 2800
-
-// function calculateTotalPrice(array, prop) {
-//   "use strict";
-//   let total = 0;
-//   for (const obj of array) {
-//     // console.log(obj.name);
-//     if (prop === obj.name) {
-//       total += obj.price * obj.quantity;
-//       total;
-//     }
-//     // return total;
-//   }
-//   return total;
-// }
-
-// // Объекты и ожидаемый результат
-// const products = [
-//   { name: "Радар", price: 1300, quantity: 4 },
-//   { name: "Радар", price: 1280, quantity: 2 },
-//   { name: "Радар", price: 1320, quantity: 1 },
-//   { name: "Сканер", price: 2700, quantity: 1 },
-//   { name: "Сканер", price: 2500, quantity: 3 },
-//   { name: "Дроид", price: 400, quantity: 7 },
-//   { name: "Захват", price: 1200, quantity: 2 },
-// ];
-
-// console.log(calculateTotalPrice(products, "Радар"));
-// // 9080
-
-// console.log(calculateTotalPrice(products, "Сканер"));
-// // 10200
-
-// console.log(calculateTotalPrice(products, "Захват"));
-// // 2400
-
-// console.log(calculateTotalPrice(products, "Дроид"));
-// // 2800
-
-// Задача 4 - 1
-// Callback функция
 // Функция mapArray(array, cb), принимает 1 - м параметром array - массив чисел, а вторым параметром cb - функцию обратного вызова(callback).Функция mapArray создает новый массив numbers и заполняет его числами из массива array преобразованными функцией cb.
 // Оформи создание массива numbers нужной длины используя new Array() и необходимый аргумент для задания длины, равной длине array.
 // Напиши функцию обратного вызова addIndex, которая принимает два параметра - element и index и возвращает число - сумму element и index(сложение).
@@ -981,8 +855,9 @@ mood : happy
 // console.log(mapArray(arr, subIndex));
 // // [1, 1, 1, 1, 1]
 
-// Задача 4 - 2
-// Callback функция и метод push
+// =====================================================
+console.log("Задача 4 - 2 // Callback функция и метод push \n");
+
 // Функция isUniq принимает три параметра - element, index и arr.Функция возвращает true или false в зависимости от того встречается ли элемент первый раз в массиве(true) или этот элемент в массиве уже встречался(false).
 // Функция isEven принимает один параметр - element.Функция возвращает true или false в зависимости от того является ли элемент четным числом или нет.
 // Функция filterArray(array, cb), принимает 1 - м параметром array - массив чисел, а вторым параметром cb - функцию обратного вызова(callback).Дополни тело функции так, чтобы функция filterArray заполняла новый пустой массив numbers только теми элементами из массива array, для которых вызов функции cb вернет true.
@@ -1012,8 +887,11 @@ mood : happy
 // console.log(filterArray(arr, isEven));
 // // [2, 4, 2]
 
-// Задача 4 - 3
-// Callback функция для получения одного вычисляемого значения массива
+// =====================================================
+console.log(
+  "Задача 4 - 3 // Callback функция для получения одного значения массива \n"
+);
+
 // Функции add, sub и mult принимают два параметра - accum и element, возвращает число - сумму, разность или произведение параметров.
 // Дополни тело функции reduceArray строкой присвоения accum вызова функции cb.Функция reduceArray должна будет подсчитать сумму или разность или произведение всех элементов массива в зависимости от того какая именно из трех функция(add, mult, sub) будет передана в качестве cb.
 
@@ -1052,8 +930,9 @@ mood : happy
 // console.log(reduceArray(arr, sub)); // -13
 // console.log(reduceArray(arr, sub, 10)); // -5
 
-// Задача 4 - 4
-// this в методах объекта
+// =====================================================
+console.log("Задача 4 - 4 // this в методах объекта \n");
+
 //Расставь отсутствующие this в методах объекта account.
 // В комментариях показаны операции с объектом и ожидаемые результаты.
 
@@ -1090,8 +969,9 @@ mood : happy
 // console.log(account.showOrders());
 // // ['order-1', 'order-2', 'order-3', 'order-4']
 
-// Задача 4 - 5
-// bind для замены this в методах объекта
+// =====================================================
+console.log("Задача 4 - 5 // bind для замены this в методах объекта \n");
+
 // Оформи вызов метода invokeInventoryAction таким образом, чтобы в качестве this для методов
 // inventory.add
 // inventory.remove выступал объект inventory
@@ -1211,8 +1091,9 @@ mood : happy
 // const b = [];
 // console.log(b.__proto__ === Array.prototype); // true
 
-// Задача 5 - 1
-// function-constructor
+// =====================================================
+console.log("Задача 5 - 1 // function-constructor\n");
+
 // Напиши функцию - конструктор Account, которая создает объект со свойствами login и email.
 // В prototype функции - конструктора добавь метод getInfo(), который возвращает строку со значениями свойств login и email объекта.
 
@@ -1233,8 +1114,9 @@ mood : happy
 // console.log(poly.getInfo());
 // // 'login : Poly, email: poly@mail.com'
 
-// Задача 5 - 2
-// class
+// =====================================================
+console.log("Задача 5 - 2 // class \n");
+
 // Напиши класс User для создания пользователя со следующим свойствами:
 // name - строка
 // age - число
@@ -1266,8 +1148,9 @@ mood : happy
 // console.log(poly.getInfo());
 // // 'User Poly is 3 years old and has 17 followers'
 
-// Задача 5 - 3
-// использование методов класса
+// =====================================================
+console.log("Задача 5 - 3 // использование методов класса \n");
+
 // Напиши класс Storage, который будет создавать объекты для управления складом товаров.При вызове будет получать один аргумент - начальный массив товаров, и записывать его в свойство items.
 // Добавь методы класса:
 // getItems() - возвращает массив текущих товаров
@@ -1327,8 +1210,9 @@ mood : happy
 // ] */
 // // console.log(new Storage.items());
 
-// Задача 5 - 4
-// переиспользование методов класса
+// =====================================================
+console.log("Задача 5 - 4 // переиспользование методов класса \n");
+
 // Напиши класс StringBuilder.На вход он получает один параметр - строку, которую записывает в свойство _value.
 // Добавь классу следующий функционал:
 // Геттер value - возвращает текущее значение поля _value
@@ -1374,8 +1258,9 @@ mood : happy
 // builder.pad("=");
 // console.log(builder.value); // '=^.^='
 
-// Задача 5 - 5
-// класс
+// =====================================================
+console.log("Задача 5 - 5 // класс \n");
+
 // Напиши класс Car с указанными свойствами и методами.
 
 // class Car {
@@ -1572,3 +1457,442 @@ mood : happy
 // console.log(mustang.price); // 2000
 // mustang.price = 4000;
 // console.log(mustang.price); // 4000
+
+console.log("\n");
+// =====================================================
+console.log("Задача 6 - 1 // map \n");
+
+// Получи массив имен всех пользователей(свойство name) используя деструктурирующее присваивание для параметра функции({ name }) без пробелов и переносов на новую строку.
+// Используй только перебирающие методы массива которые не изменяют(не мутируют) исходный массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+// Деструктурирующее присваивание для параметра функции
+
+// PS Деструктурирующее присваивание(ДП):
+// Объект как параметр без ДП
+// const object = { num: 2 }
+// function getNum(obj) { return obj.num; }
+// console.log(getNum(object)) // 2
+
+// ДП
+// const object = { num: 2 }
+// // const num  =  object.num;
+// const { num } = object;
+// console.log(num) // 2
+
+// Объект как параметр c ДП
+// const object = { num: 2 }
+// //function getNum (obj) { return obj.num; }
+// function getNum({ num }) { return num; }
+// console.log(getNum(object)) //
+
+const users = [
+  {
+    id: "701b29c3-b35d-4cf1-a5f6-8b12b29a5081",
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    skills: ["ipsum", "lorem"],
+    gender: "male",
+    age: 37,
+  },
+  {
+    id: "7a3cbd18-57a1-4534-8e12-1caad921bda1",
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+    gender: "female",
+    age: 34,
+  },
+  {
+    id: "88beb2f3-e4c2-49f3-a0a0-ecf957a95af3",
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+    gender: "male",
+    age: 24,
+  },
+  {
+    id: "249b6175-5c30-44c6-b154-f120923736f5",
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    skills: ["adipisicing", "irure", "velit"],
+    gender: "female",
+    age: 21,
+  },
+  {
+    id: "334f8cb3-eb04-45e6-abf4-4935dd439b70",
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    skills: ["ex", "culpa", "nostrud"],
+    gender: "male",
+    age: 27,
+  },
+  {
+    id: "150b00fb-dd82-427d-9faf-2879ea87c695",
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    skills: ["non", "amet", "ipsum"],
+    gender: "male",
+    age: 38,
+  },
+  {
+    id: "e1bf46ab-7168-491e-925e-f01e21394812",
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    skills: ["lorem", "veniam", "culpa"],
+    gender: "female",
+    age: 39,
+  },
+];
+// const userNames = users.map((user) => user.name);
+// console.log("userNames", userNames);
+
+// Объект как параметр без ДП
+// const object = { num: 2 }
+// function getNum(obj) { return obj.num; }
+// console.log(getNum(object)) // 2
+
+// ДП
+// const object = { num: 2 }
+// // const num  =  object.num;
+// const { num } = object;
+// console.log(num) // 2
+
+// Объект как параметр c ДП
+// const object = { name: "Moore Hensley" };
+// //function getNum (obj) { return obj.name; }
+// function getNum({ name }) {
+//   return name;
+// }
+// console.log(getNum(object)); //
+
+// const getUserNames = (array) => array.map(({ name }) => name);
+// console.log(getUserNames(users));
+/* [
+  "Moore Hensley",
+  "Sharlene Bush",
+  "Ross Vazquez",
+  "Elma Head",
+  "Carey Barr",
+  "Blackburn Dotson",
+  "Sheree Anthony",
+] */
+
+// =====================================================
+console.log("Задача 6 - 2 // filter \n");
+
+// Используй только перебирающие методы массива которые не изменяют(не мутируют) исходный массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+// Получи массив объектов пользователей, отобранный по цвету глаз(свойство eyeColor), используя деструктурирующее присваивание для параметра функции({ eyeColor }) без пробелов и переносов на новую строку.
+
+// const getUsersWithEyeColor = (array, color) =>
+//   array.filter(({ eyeColor }) => eyeColor === color);
+// console.log(getUsersWithEyeColor(users, "blue"));
+
+/* [
+  {
+    id: "701b29c3-b35d-4cf1-a5f6-8b12b29a5081",
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    skills: ["ipsum", "lorem"],
+    gender: "male",
+    age: 37,
+  },
+  {
+    id: "7a3cbd18-57a1-4534-8e12-1caad921bda1",
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+    gender: "female",
+    age: 34,
+  },
+  {
+    id: "334f8cb3-eb04-45e6-abf4-4935dd439b70",
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    skills: ["ex", "culpa", "nostrud"],
+    gender: "male",
+    age: 27,
+  }
+] */
+
+// =====================================================
+console.log("Задача 6 - 3 // filter, map \n");
+
+// Получи массив имен пользователей(значение свойства name) по полу(значение свойства gender).
+// Используй деструктурирующее присваивание для параметра функции({ name }) без пробелов и переносов на новую строку.
+// нельзя использовать for, splice, push и т.п.мутирующие методы.
+
+// const getUsersWithGender = (array, gender) =>
+//   array.filter((obj) => obj.gender === gender).map(({ name }) => name);
+// console.log(getUsersWithGender(users, "male"));
+
+/* [
+  "Moore Hensley",
+  "Ross Vazquez",
+  "Carey Barr",
+  "Blackburn Dotson"
+] */
+
+// =====================================================
+console.log("Задача 6 - 4 // filter и оператор! \n");
+
+// Получи массив только неактивных пользователей(отфильтруй по значению свойства isActive)
+// Используй деструктурирующее присваивание для параметра функции({ isActive }) без пробелов и переносов на новую строку.
+// Используй оператор!.
+// Используй только перебирающие методы массива которые не изменяют(не мутируют) исходный массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+
+// const getInactiveUsers = (array) => array.filter(({ isActive }) => !isActive);
+// console.log(getInactiveUsers(users));
+
+/* [
+  {
+    id: '701b29c3-b35d-4cf1-a5f6-8b12b29a5081',
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    skills: ['ipsum', 'lorem'],
+    gender: 'male',
+    age: 37,
+  },
+  {
+    id: '88beb2f3-e4c2-49f3-a0a0-ecf957a95af3',
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+    gender: 'male',
+    age: 24,
+  },
+  {
+    id: '150b00fb-dd82-427d-9faf-2879ea87c695',
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    skills: ['non', 'amet', 'ipsum'],
+    gender: 'male',
+    age: 38,
+  }
+]; */
+
+// =====================================================
+console.log("Задача 6 - 5 // find \n");
+
+// Получи объект пользователя(не массив) по уникальному значению свойства email.
+// Используй деструктурирующее присваивание для параметра функции({ email }) без пробелов и переносов на новую строку.
+// Используй только перебирающие методы массива которые не изменяют(не мутируют) исходный массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+
+// const getUserWithEmail = (array, mail) =>
+//     array.find(({ email }) => email === mail);
+
+// console.log(getUserWithEmail(users, "rossvazquez@xinware.com"));
+/* {
+    id: '88beb2f3-e4c2-49f3-a0a0-ecf957a95af3',
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+    gender: 'male',
+    age: 24,
+} */
+
+// console.log(getUserWithEmail(users, "blackburndotson@furnigeer.com"));
+/* {
+    id: '150b00fb-dd82-427d-9faf-2879ea87c695',
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    skills: ['non', 'amet', 'ipsum'],
+    gender: 'male',
+    age: 38,
+} */
+
+// =====================================================
+console.log("Задача 6 - 6 // filter, map и создание анонимных объектов \n");
+
+// Получи массив из объектов, которые состоят только из свойств name и email тех пользователей, которые попадают в возрастную категорию от min до max лет(значение свойства age).
+// Сравнение, пример
+// const x = 13;
+
+// // num больше 10 ?
+// const larger = num > 10; // true
+
+// // num меньше 100 ?
+// const smaller = 100 > num; // true
+
+// // num находитя между 10 и 100 ?
+// const between = smaller && larger; // true
+
+// Используй только перебирающие методы массива которые не изменяют(не мутируют) исходный массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+
+// const getUsersWithAge = (array, min, max) =>
+//   array
+//     .filter(({ age }) => age > min && age < max)
+//     .map(({ name, email }) => ({ name, email }));
+
+// console.log(getUsersWithAge(users, 20, 30));
+/* [
+    { name: 'Ross Vazquez', email: 'rossvazquez@xinware.com' },
+    { name: 'Elma Head', email: 'elmahead@omatom.com' },
+    { name: 'Carey Barr', email: 'careybarr@nurali.com' }
+] */
+
+// console.log(getUsersWithAge(users, 30, 40));
+/* [
+    { name: 'Moore Hensley', email: 'moorehensley@indexia.com' },
+    { name: 'Sharlene Bush', email: 'sharlenebush@tubesys.com' },
+    { name: 'Blackburn Dotson', email: 'blackburndotson@furnigeer.com' },
+    { name: 'Sheree Anthony', email: 'shereeanthony@kog.com' }
+] */
+
+// =====================================================
+console.log("Задача 6 - 7 // reduce \n");
+
+// Получи общую сумму баланса(сумму значений свойства balance) всех пользователей.
+// Используй деструктурирующее присваивание для параметра функции { balance } без пробелов и переносов на новую строку
+// Используй только перебирающие методы массива которые не изменяют(не мутируют) исходный массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+
+// const calculateTotalBalance = (array) =>
+//   array.reduce((acc, { balance }) => {
+//     return acc + balance;
+//   }, 0);
+
+// console.log(calculateTotalBalance(users));
+// // 20916
+
+// =====================================================
+console.log("Задача 6 - 8 // filter, includes и map \n");
+
+// Получи массив имен всех пользователей у которых есть друг с заданным именем.
+// Используй деструктурирующее присваивание для параметра функции { friends } и({ name }) без пробелов и переносов на новую строку
+// Используй только перебирающие методы массива которые не изменяют(не мутируют) исходный массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+
+// const getUsersWithFriend = (array, friendName) =>
+//   array
+//     .filter(({ friends }) => friends.includes(friendName))
+//     .map(({ name }) => name);
+
+// console.log(getUsersWithFriend(users, "Briana Decker"));
+// // [ 'Sharlene Bush', 'Sheree Anthony' ]
+
+// console.log(getUsersWithFriend(users, "Goldie Gentry"));
+// // [ 'Elma Head', 'Sheree Anthony' ]
+
+// =====================================================
+console.log("Задача 6 - 9 // sort и map \n");
+
+// Получи массив имен(поле name) людей, отсортированных в зависимости от количества их друзей(поле friends)
+// Избегаем мутации исходного массива: т.к.метод sort изменяет(мутирует) исходный массив, то следует сделать копию массива и сортировать уже копию, а не исходный массив.
+// Копирование массива:
+// const arr = [1, 3, 5];
+// // 1
+// const first = [...arr];
+// // 2
+// const second = arr.slice();
+// // 3
+// const third = arr.concat();
+// Используй деструктурирующее присваивание для параметра функции({ name })` без пробелов и переносов на новую строку
+// Используй только перебирающие методы массива которые не изменяют (не мутируют) исходный массив. Т.е. нельзя использовать for, splice, push и т.п. мутирующие методы.
+
+// const getNamesSortedByFriendsCount = (array) =>
+//   (array = [...array].sort((prevUser, nextUser) => {
+//     return prevUser.friends.length - nextUser.friends.length;
+//   })).map(({ name }) => name);
+
+// console.log(getNamesSortedByFriendsCount(users));
+// // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
+
+// =====================================================
+console.log("Задача 6 - 10 // reduce, filter, sort \n");
+
+// Получи массив всех умений всех пользователей(поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
+// Слияние массивов:
+// const odd = [1, 3, 5];
+// const even = [2, 4, 6];
+// // 1
+// [...odd, ...even];
+// //  [1, 3, 5, 2, 4, 6]
+// // 2
+// odd.concat(even)
+// //  [1, 3, 5, 2, 4, 6]
+// Используй только перебирающие методы массива которые не изменяют(не мутируют) исходный массив.Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+
+// const getSortedUniqueSkills = (array) =>
+//   array
+//     .reduce(function (acc, obj) {
+//       return [...acc, ...obj.skills];
+//     }, [])
+//     .filter((value, index, self) => self.indexOf(value) === index)
+//     .sort(function (a, b) {
+//       if (a < b) {
+//         return -1;
+//       }
+//       if (a > b) {
+//         return 1;
+//       }
+//       return 0;
+//     });
+
+// console.log(getSortedUniqueSkills(users));
+/* [ 'adipisicing', 'amet',
+ 'anim', 'commodo',
+ 'culpa', 'elit',
+ 'ex', 'ipsum',
+ 'irure', 'laborum',
+ 'lorem', 'mollit',
+ 'non', 'nostrud',
+ 'nulla', 'proident',
+ 'tempor', 'velit',
+ 'veniam' ]; */
